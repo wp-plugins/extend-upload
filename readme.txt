@@ -11,3 +11,8 @@ A plugin for developers to Extend WordPress upload to be able to use it at any p
 == Description ==
 
 I had a problem that most of the time I had to upload a file, and I had to use a HTML upload, and that's kind of bad, so I created something to use the Thickbox and the WordPress Uploader.
+
+
+If you want you can check the plugin on GitHub, I will update there then I will commmit here.
+
+https://github.com/webord/extend-upload
