@@ -1,6 +1,6 @@
 === Extend Upload ===
 Contributors: webord
-Donate link: http://example.com/
+Donate link: http://bordoni.me/
 Tags: upload, developer, dev, extend
 Requires at least: 3.0
 Tested up to: 3.3.1
