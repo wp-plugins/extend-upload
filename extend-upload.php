@@ -4,8 +4,8 @@ Plugin Name: Extend WordPress Upload
 Plugin URI: http://bordoni.me/wp/plugins/extend-upload
 Version: 0.0.2
 Description: A WordPress plugin to Extend the default WordPress upload
-Author: Quatix
-Author URI: http://www.quatix.com.br
+Author: Gustavo Bordoni
+Author URI: http://bordoni.me/
 Text Domain: extup
 Domain Path: /lang
 License: GNU General Public License 2.0 (GPL) http://www.gnu.org/licenses/gpl.html
