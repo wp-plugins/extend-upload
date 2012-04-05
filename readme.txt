@@ -14,32 +14,32 @@ I had a problem that most of the time I had to upload a file, and I had to use a
 
 To use you must enqueue in the page used both the style and the script of the plugin:
 `
-	<?php
-		wp_enqueue_script( 'extend-upload' );
-		wp_enqueue_style( 'extend-upload' );
+<?php
+	wp_enqueue_script( 'extend-upload' );
+	wp_enqueue_style( 'extend-upload' );
 `
 
 Then you can use the plugin by calling the jQuery Extends:
 `
-	(function($) {
-		$(document).ready(function () {
-			$('.uc-call').callUpload();
-		});
-	})(jQuery.noConflict());
+(function($) {
+	$(document).ready(function () {
+		$('.uc-call').callUpload();
+	});
+})(jQuery.noConflict());
 `
 And the HTML/PHP output should be something like that:
 `
-	<?php
-		$args = array( 
-			'url' => admin_url( 'media-upload.php?post_id=0&button=' . rawurlencode('Use as Avatar') . '&TB_iframe=1&width=640&height=253' )
-		)
-	?>
-	<p class='uc-container'>
-		<label><?php echo _e( "Avatar:" ); ?></label><a target='_blank' class='uc-call' data='<?php echo json_encode( $args ); ?>'><small>" . __( "Upload the Photo" ) . "</small></a>"; ?>
-		<input class="uc-answer" type="text" value="<?php echo ( is_numeric( absint( $avatar ) ) ? absint( $avatar ) : esc_url($avatar) ); ?>" />
-	</p>
-
+<?php
+	$args = array( 
+		'url' => admin_url( 'media-upload.php?post_id=0&button=' . rawurlencode('Use as Avatar') . '&TB_iframe=1&width=640&height=253' )
+	);
+?>
+<p class='uc-container'>
+	<label><?php echo _e( "Avatar:" ); ?></label><a target='_blank' class='uc-call' data='<?php echo json_encode( $args ); ?>'><small>" . __( "Upload the Photo" ) . "</small></a>"; ?>
+	<input class="uc-answer" type="text" value="<?php echo ( is_numeric( absint( $avatar ) ) ? absint( $avatar ) : esc_url($avatar) ); ?>" />
+</p>
 `
+
 Having the `uc-call` for the link, `uc-answer` with the input field and `uc-container` for the box with both the link and the input field.
 
 All the stuff is customizable by passing the variables in to the array `$args`, some stuff must be passed in the url, but later on I will add a easier way to do it.
