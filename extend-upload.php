@@ -22,6 +22,8 @@ if ( version_compare(PHP_VERSION, '5.2', '<') ) {
 }
 
 add_action( 'init', function() {
+	load_plugin_textdomain( 'extup', false, dirname( plugin_basename( __FILE__ ) ) . '/lang/' );
+
 	$pluginurl = plugins_url() . "/" . basename( dirname(__FILE__) );
 	if ( preg_match( '/^https/', $pluginurl ) && !preg_match( '/^https/', get_bloginfo('url') ) )
 		$pluginurl = preg_replace( '/^https/', 'http', $pluginurl );
