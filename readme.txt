@@ -4,7 +4,7 @@ Donate link: http://bordoni.me/
 Tags: upload, developer, dev, extend
 Requires at least: 3.0
 Tested up to: 3.3.1
-Stable tag: 0.0.2
+Stable tag: 0.0.3
 
 A plugin for developers to Extend WordPress upload to be able to use it at any place.
 
@@ -46,6 +46,9 @@ All the stuff is customizable by passing the variables in to the array `$args`, 
 
 == Backlog ==
 
+= 0.0.3 =
+* Added the support for internationalization and Portuguese Brazil tranlation
+
 = 0.0.2 =
 * Added the javascript to change the Insert to Post text on the thickbox
 
@@ -54,6 +57,9 @@ All the stuff is customizable by passing the variables in to the array `$args`, 
 
 
 == Upgrade Notice ==
+
+= 0.0.3 =
+Adding internationalization and the translation for pt_br
 
 = 0.0.2 =
 To add the possibility to change the Insert to Post button on the thickbox

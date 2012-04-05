@@ -2,7 +2,7 @@
 /*
 Plugin Name: Extend WordPress Upload
 Plugin URI: http://bordoni.me/wp/plugins/extend-upload
-Version: 0.0.2
+Version: 0.0.3
 Description: A WordPress plugin to Extend the default WordPress upload
 Author: Gustavo Bordoni
 Author URI: http://bordoni.me/
@@ -26,8 +26,8 @@ add_action( 'init', function() {
 	if ( preg_match( '/^https/', $pluginurl ) && !preg_match( '/^https/', get_bloginfo('url') ) )
 		$pluginurl = preg_replace( '/^https/', 'http', $pluginurl );
 
-	wp_register_script( 'extend-upload', $pluginurl . "/js/extend-upload.js", array( 'json2', 'jquery', 'thickbox', 'media-upload' ), '0.0.2', true );
-	wp_register_style( 'extend-upload', $pluginurl . "/css/extend-upload.css", array( 'thickbox' ), '0.0.2', 'screen' );
+	wp_register_script( 'extend-upload', $pluginurl . "/js/extend-upload.js", array( 'json2', 'jquery', 'thickbox', 'media-upload' ), '0.0.3', true );
+	wp_register_style( 'extend-upload', $pluginurl . "/css/extend-upload.css", array( 'thickbox' ), '0.0.3', 'screen' );
 }, 5 );
 
 add_action( 'image_send_to_editor', function( $html, $id, $caption, $title, $align, $url, $size, $alt ) {
