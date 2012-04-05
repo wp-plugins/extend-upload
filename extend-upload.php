@@ -6,7 +6,7 @@ Version: 0.0.2
 Description: A WordPress plugin to Extend the default WordPress upload
 Author: Quatix
 Author URI: http://www.quatix.com.br
-Text Domain: eup
+Text Domain: extup
 Domain Path: /lang
 License: GNU General Public License 2.0 (GPL) http://www.gnu.org/licenses/gpl.html
 */
@@ -15,7 +15,7 @@ if ( version_compare(PHP_VERSION, '5.2', '<') ) {
 	if ( is_admin() && (!defined('DOING_AJAX') || !DOING_AJAX) ) {
 		require_once ABSPATH.'/wp-admin/includes/plugin.php';
 		deactivate_plugins( __FILE__ );
-		wp_die( __('To install Extend Upload, your server must have at least PHP version 5.2, as WordPress 3.2 requires.'), __( 'Error While installing Extend Upload' ), array( 'back_link' => true ) );
+		wp_die( __('To install Extend Upload, your server must have at least PHP version 5.2, as WordPress 3.2 requires.', 'extup' ), __( 'Error While installing Extend Upload', 'extup' ), array( 'back_link' => true ) );
 	} else {
 		return;
 	}
