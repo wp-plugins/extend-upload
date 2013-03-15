@@ -2,7 +2,7 @@
 /*
 Plugin Name: Extend WordPress Upload
 Plugin URI: http://bordoni.me/wp/plugins/extend-upload
-Version: 0.0.3
+Version: 0.0.4
 Description: A WordPress plugin to Extend the default WordPress upload
 Author: Gustavo Bordoni
 Author URI: http://bordoni.me/

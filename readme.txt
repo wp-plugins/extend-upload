@@ -61,6 +61,12 @@ All the stuff is customizable by passing the variables in to the array `$args`, 
 
 == Upgrade Notice ==
 
+= 0.0.4 =
+Older version jQuery allowed, nailed it!
+
+= 0.0.3 =
+Internationalization! Yipiii!
+
 = 0.0.2 =
 To add the possibility to change the Insert to Post button on the thickbox
 
