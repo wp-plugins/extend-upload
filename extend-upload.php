@@ -22,8 +22,6 @@ if ( version_compare(PHP_VERSION, '5.2', '<') ) {
 }
 
 add_action( 'init', function() {
-	load_plugin_textdomain( 'extup', false, dirname( plugin_basename( __FILE__ ) ) . '/lang/' );
-
 	$pluginurl = plugins_url() . "/" . basename( dirname(__FILE__) );
 	if ( preg_match( '/^https/', $pluginurl ) && !preg_match( '/^https/', get_bloginfo('url') ) )
 		$pluginurl = preg_replace( '/^https/', 'http', $pluginurl );
@@ -32,10 +30,16 @@ add_action( 'init', function() {
 	wp_register_style( 'extend-upload', $pluginurl . "/css/extend-upload.css", array( 'thickbox' ), '0.0.3', 'screen' );
 }, 5 );
 
-add_action( 'image_send_to_editor', function( $html, $id, $caption, $title, $align, $url, $size, $alt ) {
-	$html = str_replace( 'src="' , 'data=\'' . json_encode( array( 'id'=>$id ) ) . '\' src="', $html );
+add_filter( 'media_send_to_editor', function( $html, $send_id, $attachment){
+	$html = str_replace( 'href=' , 'data-callUpload=\'' . json_encode( array( 'id'=>$send_id ) ) . '\' href=', $html );
 	return $html;
-}, 10, 8 );
+}, 11, 3 );
+
+add_action( 'image_send_to_editor', function( $html, $id, $caption, $title, $align, $url, $size, $alt ) {
+	$html = str_replace( 'src=' , 'data-callUpload=\'' . json_encode( array( 'id'=>$id ) ) . '\' src=', $html );
+	return $html;
+}, 11, 8 );
+
 
 add_action( 'admin_head-media-upload-popup', function() {
 	if( isset($_GET['button']) && !empty($_GET['button']) ) {
